@@ -156,6 +156,8 @@ public class SMSOTPConstants {
     public static final String STATUS_CODE_MISMATCH = "code-mismatch";
     public static final String OTP_GENERATED_TIME = "otp-generated-time";
 
+    public static final long SMS_OTP_EXPIRY_TIME = 120;
+
     /**
      * Enums for error messages.
      */
@@ -176,7 +178,10 @@ public class SMSOTPConstants {
         SERVER_UNAVAILABLE("65004", "SMS Service unavailable or gateway time-out."),
         SERVER_TIMEOUT("65005", "Secondary gateway or SMS provider server time-out."),
         MALFORMED_URL("10001", "The SMS URL does not conform to URL specification."),
-        SERVER_UNKNOWN_ERROR("10002", "Unknown error occured. Please try again.");
+        SERVER_UNKNOWN_ERROR("10002", "Unknown error occured. Please try again."),
+        EXPIRED_OTP("10003", "OTP has expired."),
+        INVALID_OTP_USER("10004", "OTP does not belonged to the user."),
+        INVALID_OTP("10005", "Invalid OTP");
 
         private final String code;
         private final String message;
